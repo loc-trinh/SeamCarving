@@ -147,19 +147,12 @@ void realTime(Mat& image){
     }
 }
 
-void shrink_image(Mat& image){
-    cout << "The size of the image is: (" << image.cols << ", " << image.rows << ")" << endl;
-    int new_rows, new_cols;
-    cout << "Enter new width: ";
-    cin >> new_cols;
-    cout << "Enter new height: ";
-    cin >> new_rows;
-
+void shrink_image(Mat& image, int new_cols, int new_rows, int width, int height){
     cout << endl << "Processing image..." << endl;
-    for(int i = 0; i < (image.cols - new_cols); i++){
+    for(int i = 0; i < width - new_cols; i++){
         remove_seam(image, 'v');
     }
-    for(int i = 0; i < (image.rows - new_rows); i++){
+    for(int i = 0; i < height - new_rows; i++){
         remove_seam(image, 'h');
     }
 }
@@ -178,7 +171,13 @@ int main( int argc, char** argv ) {
         return -1;
     }
     if ((*argv[2]) != 'y') {
-        shrink_image(image);
+        cout << "The size of the image is: (" << image.cols << ", " << image.rows << ")" << endl;
+        int new_rows, new_cols;
+        cout << "Enter new width: ";
+        cin >> new_cols;
+        cout << "Enter new height: ";
+        cin >> new_rows;
+        shrink_image(image, new_cols, new_rows, image.cols, image.rows);
         cout << "Done!" << endl;
         imwrite("output.jpg", image);
     }
