@@ -8,14 +8,14 @@ C++ implementation of size carving/dynamic programming algorithm according to "S
 
 ###Preview
 #####Input: 1280 x 800 px
-![alt tag](pics/inputA.jpg "Input")
+<img src="pics/inputA.jpg" width="880px" height="550px" />
 
 #####Output: 800 x 500 px
-![alt tag](pics/outputA.jpg "Output")
+<img src="pics/outputA.jpg" width="550px" height="343px" />
 
 #####Input: 2617 x 500 px
-![alt tag](pics/inputB.jpg "Input")
+<img src="pics/inputB.jpg" width="880px" height="200px" />
 
 #####Output: 2000 x 500 px
-![alt tag](pics/outputB.jpg "Output")
+<img src="pics/outputB.jpg" width="672px" height="200px" />
 
