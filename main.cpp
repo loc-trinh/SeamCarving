@@ -48,7 +48,8 @@ int* find_seam(Mat &image){
             min_index = c;
         }
 
-    int path[H];
+    int *path;
+    path = new int[H];
     Point pos(H-1,min_index);
     path[pos.x] = pos.y;
 
